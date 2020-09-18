@@ -1,0 +1,29 @@
+header ul {
+  display: flex;
+  flex-flow: wrap;
+}
+
+header ul li{
+  margin: 20px;
+  list-style: none;
+}
+
+main {
+  width: 100%;
+}
+
+.quizStart {
+  padding: 50px;
+  text-align: center;
+}
+
+.button {
+  padding: 20px;
+  border: none;
+  font-size: 30px;
+  
+}
+
+.displayAnswerForm {
+  display: none;
+}

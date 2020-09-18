@@ -1,1 +1,1 @@
-This is a Quiz App that I am currently working on.
+### Boilerplate app structure for Quiz App project
