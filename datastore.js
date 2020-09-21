@@ -3,7 +3,7 @@
 
 
 let appScore = 0;
-let appQuestion = 0;
+let appQuestion = -1;
 
 
 
@@ -102,6 +102,7 @@ const ANSWERS = [
   `Woodrow Wilson.`,
   `Louisiana.`,
   `1787.`,
+  `Thomas Jefferson.`
 
 ];
 
@@ -119,8 +120,8 @@ const EXPLANATIONS = [
   `Washington has been called the "Father of His Country" for his manifold leadership!`,
   `During World War II, Dwight D Eisenhower became a five-star general in the Army!`,
   `After a policy of neutrality at the outbreak of World War I, Woodrow Wilson led America into war in order to “make the world safe for democracy!`,
-  `The Louisiana Purchase (1803) was a land deal between the United States and France, in which the U.S. acquired approximately 827,000 square miles of land west of the Mississippi River for $15 million!`,
+  `The Louisiana Purchase (1803) was a land deal between the United States and France.`,
   `The Constitution was written at the 1787 Philadelphia Convention.`,
-  `At the Second Continental Congress during the summer of 1776, Thomas Jefferson of Virginia was charged with drafting a formal statement justifying the 13 North American colonies' break with Great Britain!`,
+  `At the Second Continental Congress, Thomas Jefferson of Virginia was charged with drafting a formal statement justifying the 13 North American colonies' break with Great Britain!`,
 
 ];
