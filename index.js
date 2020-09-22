@@ -8,6 +8,7 @@
 function renderStartMenu() {
     $('main').html(`
     <section class='mainMenu'>
+        <img src='pictures/uncle-sam.jpg' alt='uncle-sam'>
         <h1>How well do you know American History!</h1>
         <button type='button' class='startButton'>Let's Begin!</button>
     </section>
