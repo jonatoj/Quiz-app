@@ -96,7 +96,7 @@ function renderFeedback() {
     let won = getScore() == getTotalQuestions();
     $('main').html(`
     <section class='feedbackScreen'>
-    <h1>${ won ? 'WOW! You do know the history!': 'Close! Keep Trying!'}</h1>
+    <h1>${ won ? 'WOW! You know American History!': 'Close! Keep Trying!'}</h1>
     <h2>${ won ? 'CONGRATS! Your Scored 6 out 6! ': 'You will get all the questions right next time!'}</h2>
     <br><br>
     <button type='button' class='startButton'>Again</button>
