@@ -25,7 +25,7 @@ body {
 .mainMenu {
   font-size: 15px;
   text-align: center;
-  margin-top: 35%;
+  margin-top: 25%;
 }
 
 .flex-container {
@@ -68,6 +68,14 @@ label {
   text-align: center;
 }
 
+img {
+  width: 50%;
+  height: auto;
+  background-color: rgba(80, 175, 80, 0.1);
+  border: solid;
+
+}
+
 /** DESKTOP VIEW **/
 @media screen and (min-width: 800px) {
   header ul li{
@@ -81,7 +89,7 @@ label {
   }
 
   .mainMenu {
-    margin-top: 15%;
+    margin-top: 5%;
   }
 
   body {
@@ -103,5 +111,9 @@ label {
   .correctScreen {
     text-align: center;
     font-size: 30px;
+   }
+
+   img {
+    width: 20%;
    }
 }
