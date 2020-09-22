@@ -3,7 +3,7 @@
 
 
 
-// ** MAIN MENU ** //
+//  MAIN MENU SCREEN //
 
 function renderStartMenu() {
     $('main').html(`
@@ -16,9 +16,7 @@ function renderStartMenu() {
 
 
 
-
-// ** QUESTIONNAIRE ** //
-
+// QUESTIONNAIRE //
 function renderQuestion() {
 
     let question = getAppQuestion();
@@ -55,9 +53,9 @@ function renderQuestion() {
 
 }
 
-// *** END OF QUESTIONNAIRE *** //
-
+// ANSWER SCREEN //
 function renderAnswer(answer, correctAnswer, explanation) {
+
 //CORRECT ANSWER
     if(answer == correctAnswer) {
         $('main').html(`
@@ -72,6 +70,7 @@ function renderAnswer(answer, correctAnswer, explanation) {
     </section>
     `)
 }
+
 // WRONG ANSWER
     else {
         $('main').html(`
@@ -91,6 +90,7 @@ function renderAnswer(answer, correctAnswer, explanation) {
     }
 }
 
+// FEEDBACK SCREEN //
 function renderFeedback() {
     let won = getScore() == getTotalQuestions();
     $('main').html(`
@@ -102,6 +102,8 @@ function renderFeedback() {
     </section>
     `)
 }
+
+// SCORE //
 function score() {
     $('.score').html(appScore);
 
@@ -113,8 +115,6 @@ function score() {
 // ********************     CALLBACK FUNCTIONS      ******************** //
 
 
-
-
 function handleStartQuiz() {
     $('main').on('click', '.startButton', function(event) {
         appScore = 0;
@@ -123,6 +123,7 @@ function handleStartQuiz() {
         score();
     });
 }
+
 
 function handleAnswerOrSubmit() {
     $('main').on('submit', 'form', function(event) {
@@ -156,18 +157,14 @@ function handleNextQuestion() {
 }
 
 
-
 function setUp() {
-    $(function(){
         renderStartMenu();
         handleStartQuiz();
          handleAnswerOrSubmit();
          handleNextQuestion();
          score();
-    
-});
-}
-setUp();
+    }  
+ $(setUp);
 
 
 // ***********************      UTILITY FUNCTION      *********************** //
@@ -198,30 +195,3 @@ function getTotalQuestions() {
     return STORE.length;
 }
 
-
-/**
- * 
- * Technical requirements:
- * 
- * Your app should include a render() function, that regenerates the view each time the store is updated. 
- * See your course material and access support for more details.
- *
- * NO additional HTML elements should be added to the index.html file.
- *
- * You may add attributes (classes, ids, etc) to the existing HTML elements, or link stylesheets or additional scripts if necessary
- *
- * SEE BELOW FOR THE CATEGORIES OF THE TYPES OF FUNCTIONS YOU WILL BE CREATING 👇
- * 
- */
-
-/********** TEMPLATE GENERATION FUNCTIONS **********/
-
-// These functions return HTML templates
-
-/********** RENDER FUNCTION(S) **********/
-
-// This function conditionally replaces the contents of the <main> tag based on the state of the store
-
-/********** EVENT HANDLER FUNCTIONS **********/
-
-// These functions handle events (submit, click, etc)
