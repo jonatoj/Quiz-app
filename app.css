@@ -9,16 +9,17 @@ header ul {
 header ul li{
   margin: auto;
   list-style: none;
+  font-size: 24px;
 }
 
 /** MAIN**/
 
 body {
   font-family: 'Nunito', sans-serif;
-  background-image: url('pictures/flag.jpg');
+  background-image: url('pictures/flag.jpg') ;
+  background-color: rgba(80, 175, 80, 0.1);
   background-size: 400%;
   color: #E5DCC5;
-  
 }
 
 .mainMenu {
@@ -50,8 +51,9 @@ button {
   display: block;
   margin: auto;
   font-size: 30px;
-  background-color: #848FA5;
+  background-color: gray;
   color: #E5DCC5;
+  background-color: rgba(80, 175, 80, 0.1);
 }
 
 .questiontxt {
@@ -76,6 +78,10 @@ label {
     padding-bottom: 30px;
     font-size: 30px;
     text-align: center;
+  }
+
+  .mainMenu {
+    margin-top: 15%;
   }
 
   body {
