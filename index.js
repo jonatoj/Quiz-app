@@ -6,12 +6,12 @@
 //  MAIN MENU SCREEN //
 
 function renderStartMenu() {
-    $('main').html(`
-    <section class='mainMenu'>
-        <img src='pictures/uncle-sam.jpg' alt='uncle-sam'>
-        <h1>How well do you know American History!</h1>
-        <button type='button' class='startButton'>Let's Begin!</button>
-    </section>
+        $('.main').html(`
+        <section class='mainMenu'>
+            <img src='pictures/uncle-sam.jpg' alt='uncle-sam'>
+            <h1>How well do you know American History!</h1>
+            <button type='button' class='startButton'>Let's Begin!</button>
+        </section>
     `)
 }
 
@@ -20,38 +20,41 @@ function renderStartMenu() {
 // QUESTIONNAIRE //
 function renderQuestion() {
 
-    let question = getAppQuestion();
+        let question = getAppQuestion();
 
-    $('main').html(`
-    <section class='screenQuestion'>
-        <form class='questionForm'>
-            <fieldset class='radio'>
-                <legend class='questiontxt'>${question.text}</legend>
-                    <div class='flex-container'>
-                <label>
-                    <input type='radio' value='${question.ans1}' name='answer' required>
-                    ${question.ans1}
-                </label>
-                <label>
-                    <input type='radio' value='${question.ans2}' name='answer' required>
-                    ${question.ans2}
-                </label>
-                <label>
-                    <input type='radio' value='${question.ans3}' name='answer' required>
-                    ${question.ans3}
-                </label>
+        $('.main').html(`
+        <section class='screenQuestion'>
+            <form class='questionForm'>
+                <fieldset class='radio'>
+                    <legend class='questiontxt'>${question.text}</legend>
+                        <div class='flex-container'>
 
-                <label>
-                    <input type='radio' value='${question.ans4}' name='answer' required>
-                    ${question.ans4}
-                    </div>
-                </label>
-            </fieldset>
-            <button type='submit'>Submit</button>
-        </form>
-    </section>
+                            <label>
+                                <input type='radio' value='${question.ans1}' name='answer' required>
+                                ${question.ans1}
+                            </label>
+                            <label>
+                                <input type='radio' value='${question.ans2}' name='answer' required>
+                                ${question.ans2}
+                            </label>
+                            <label>
+                                <input type='radio' value='${question.ans3}' name='answer' required>
+                                ${question.ans3}
+                            </label>
+                            <label>
+                                <input type='radio' value='${question.ans4}' name='answer' required>
+                                ${question.ans4}
+                            </label>
+
+                        </div> 
+
+                </fieldset>
+
+                <button>Submit</button>
+            </form>
+            
+        </section>
     `)
-
 }
 
 // ANSWER SCREEN //
@@ -59,48 +62,50 @@ function renderAnswer(answer, correctAnswer, explanation) {
 
 //CORRECT ANSWER
     if(answer == correctAnswer) {
-        $('main').html(`
+        $('.main').html(`
         <section class='correctScreen'>
-        <h1>CORRECT!</h1>
-        <div>The answer is:</div>
-        <div>${correctAnswer}</div>
-        <br><br>
-        <div>${explanation}</div>
-        <br>
-        <button type='button' class='nextQuestion'>NEXT</button>    
-    </section>
+            <h1>CORRECT!</h1>
+            <div>The answer is:</div>
+            <div>${correctAnswer}</div>
+            <br>
+            <div>${explanation}</div>
+            <br>
+            <button class='nextQuestion'>NEXT</button>    
+        </section>
     `)
 }
 
 // WRONG ANSWER
     else {
-        $('main').html(`
-    <section class='correctScreen'>
-        <h1>WRONG!</h1>
-        <div>Your answer was:</div>
-        <div>${answer}</div>
-        <br>
-        <div>The correct answer is:</div>
-        <div>${correctAnswer}</div>
-        <br>
-        <div>${explanation}</div>
-        <br>
-        <button type='button' class='nextQuestion'>NEXT</button>    
-    </section>
+        $('.main').html(`
+        <section class='correctScreen'>
+            <h1>WRONG!</h1>
+            <div>Your answer was:</div>
+            <div>${answer}</div>
+            <br>
+            <div>The correct answer is:</div>
+            <div>${correctAnswer}</div>
+            <br>
+            <div>${explanation}</div>
+            <br>
+            <button class='nextQuestion'>NEXT</button>    
+        </section>
         `)
     }
 }
 
 // FEEDBACK SCREEN //
 function renderFeedback() {
-    let won = getScore() == getTotalQuestions();
-    $('main').html(`
-    <section class='feedbackScreen'>
-    <h1>${ won ? 'WOW! You know American History!': 'Close! Keep Trying!'}</h1>
-    <h2>${ won ? 'CONGRATS! Your Scored 6 out 6! ': 'You will get all the questions right next time!'}</h2>
-    <br><br>
-    <button type='button' class='startButton'>Again</button>
-    </section>
+        let won = getScore() == getTotalQuestions();
+
+         $('.main').html(`
+        <section class='feedbackScreen'>
+            <h1>${ won ? 'WOW! You know American History!': 'Close! Keep Trying!'}</h1>
+            <br><br>
+            <div><span>Final Score</span>: <span>${getScore()}</span>/${getTotalQuestions()}</div>
+            <br><br>
+            <button class='startButton'>Try Again</button>
+        </section>
     `)
 }
 
@@ -109,7 +114,7 @@ function score() {
     $('.score').html(appScore);
 
     let questionNum = appQuestion+1;
-    questionNumb = Math.min(questionNum, getTotalQuestions());
+    questionNum = Math.min(questionNum, getTotalQuestions());
     $('.questionNumber').html(questionNum);
 }
 
@@ -117,7 +122,7 @@ function score() {
 
 
 function handleStartQuiz() {
-    $('main').on('click', '.startButton', function(event) {
+    $('.main').on('click', '.startButton', function(event) {
         appScore = 0;
         appQuestion = 0;
         renderQuestion();
@@ -127,7 +132,7 @@ function handleStartQuiz() {
 
 
 function handleAnswerOrSubmit() {
-    $('main').on('submit', 'form', function(event) {
+    $('.main').on('submit', 'form', function(event) {
         event.preventDefault();
 
         let answer = $("input[name='answer']:checked", ".questionForm").val();
@@ -144,7 +149,7 @@ function handleAnswerOrSubmit() {
 }
 
 function handleNextQuestion() {
-    $('main').on('click', '.nextQuestion', function(event) {
+    $('.main').on('click', '.nextQuestion', function(event) {
         appQuestion++;
         score();
 
